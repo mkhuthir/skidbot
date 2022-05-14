@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package format="2">
 
-  <name>rrbot</name>
+  <name>skidbot</name>
   <version>0.1.0</version>
   
-  <description>Revolute-Revolute Manipulator Robot</description>
+  <description>Skid Drive Robot</description>
 
   <maintainer email="mkhuthir@gmail.com">Muthanna Alwahash</maintainer>
 
