@@ -1,13 +1,10 @@
 
 import os
-from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
-from launch.event_handlers import OnProcessExit
+from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node 
 from launch_ros.substitutions import FindPackageShare
-from scripts import GazeboRosPaths
 import xacro
 
 pkg_name =    'skidbot'
@@ -36,11 +33,13 @@ def generate_launch_description():
 
     gz_server = IncludeLaunchDescription(
       PythonLaunchDescriptionSource(gzserver_path),
-      launch_arguments={'world': world_path}.items())
+      launch_arguments={'world': world_path}.items()
+    )
 
     # Start Gazebo client    
     gz_client = IncludeLaunchDescription(
-      PythonLaunchDescriptionSource(gzclient_path))      
+      PythonLaunchDescriptionSource(gzclient_path)
+    )      
 
     # Start robot state publisher
     node_robot_state_publisher = Node(
@@ -65,8 +64,10 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+
+        node_robot_state_publisher,
         gz_server,
         gz_client,
-        node_robot_state_publisher,
         spawn_entity,
+
     ])
