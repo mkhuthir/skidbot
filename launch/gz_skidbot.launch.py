@@ -68,6 +68,6 @@ def generate_launch_description():
         node_robot_state_publisher,
         gz_server,
         gz_client,
-        spawn_entity,
+        spawn_entity
 
     ])
