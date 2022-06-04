@@ -194,7 +194,7 @@
     <collision name="hokuyo_colision">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="${mesh_path}hokuyo.dae"/> <!--  <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/> -->
+        <box size="${hokuyo_length} ${hokuyo_width} ${hokuyo_height}"/>
       </geometry>
     </collision>
   </link>
